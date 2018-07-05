@@ -62,7 +62,7 @@ pause;
 %
 
 theta = [1 ; 1];
-[J, grad] = linearRegCostFunction([ones(m, 1) X], y, theta, 1);
+[J, grad] = linearRegCostFunction([ones(m, 1) X], y, theta, 0);
 
 fprintf(['Gradient at theta = [1 ; 1]:  [%f; %f] '...
          '\n(this value should be about [-15.303016; 598.250744])\n'], ...
@@ -84,7 +84,7 @@ pause;
 %  Train linear regression with lambda = 0
 lambda = 0;
 [theta] = trainLinearReg([ones(m, 1) X], y, lambda);
-
+theta
 %  Plot fit over the data
 plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
 xlabel('Change in water level (x)');
